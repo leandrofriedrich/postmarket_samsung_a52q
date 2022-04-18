@@ -46,8 +46,6 @@ nonfree_firmware() {
 	pkgdesc="Firmware for Modem, WiFi, etc."
 	depends="
 		firmware-samsung-a52q-adreno
-		firmware-samsung-a52q-adsp
-		firmware-samsung-a52q-cdsp
 		firmware-samsung-a52q-ipa
 		firmware-samsung-a52q-modem
 		firmware-samsung-a52q-wlan

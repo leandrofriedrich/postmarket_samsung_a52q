@@ -5,7 +5,7 @@ pkgrel=3
 pkgdesc="Mainline Kernel fork for SM7125 devices"
 arch="aarch64"
 _carch="arm64"
-url="https://github.com/map220v/sm7125-mainline"
+url="https://github.com/leandrofriedrich/sm7125-mainline"
 license="GPL-2.0-only"
 options="!strip !check !tracedeps
 	pmb:cross-native
@@ -15,7 +15,7 @@ makedepends="bison findutils flex installkernel openssl-dev perl"
 
 _repo="sm7125-mainline"
 _config="config-$_flavor.$arch"
-_commit="d006fb5b1d9c8c7fa02261a67fee3b516042c76c"
+_commit="a0a03bea27e4c2795b26140380e137fc83a2db31"
 
 # Source
 source="
