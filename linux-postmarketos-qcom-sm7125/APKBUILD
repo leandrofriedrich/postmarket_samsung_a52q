@@ -15,11 +15,11 @@ makedepends="bison findutils flex installkernel openssl-dev perl"
 
 _repo="sm7125-mainline"
 _config="config-$_flavor.$arch"
-_commit="f35606c77d88d2a3b7dc044bcd1ff66e64d5ffae"
+_commit="d006fb5b1d9c8c7fa02261a67fee3b516042c76c"
 
 # Source
 source="
-	$_repo-$_commit.tar.gz::https://github.com/map220v/$_repo/archive/$_commit/$_repo-$_commit.tar.gz
+	$_repo-$_commit.tar.gz::https://github.com/leandrofriedrich/$_repo/archive/$_commit/$_repo-$_commit.tar.gz
 	$_config
 "
 builddir="$srcdir/$_repo-$_commit"
