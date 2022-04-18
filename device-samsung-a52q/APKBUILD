@@ -1,0 +1,68 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname=device-samsung-a52q
+pkgdesc="Samsung Galaxy A52"
+pkgver=1.1
+pkgrel=2
+url="https://postmarketos.org"
+license="MIT"
+arch="aarch64"
+options="!check !archcheck"
+depends="
+	linux-postmarketos-qcom-sm7125
+	mesa-dri-gallium
+	mkbootimg
+	postmarketos-base
+"
+makedepends="devicepkg-dev"
+source="
+	deviceinfo
+	30-gpu-firmware.files
+"
+
+subpackages="
+	$pkgname-nonfree-firmware:nonfree_firmware
+	$pkgname-mainline-firmware:mainline_firmware
+"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+mainline_firmware() {
+	pkgdesc="Firmware support packages for mainline kernel"
+	depends="firmware-samsung-a52q-adreno"
+	install_if="linux-postmarketos-qcom-sm7125 $pkgname-nonfree-firmware"
+	mkdir "$subpkgdir"
+
+	install -Dm644 "$srcdir/30-gpu-firmware.files" \
+		"$subpkgdir/etc/postmarketos-mkinitfs/files/30-gpu-firmware.files"
+}
+
+nonfree_firmware() {
+	pkgdesc="Firmware for Modem, WiFi, etc."
+	depends="
+		firmware-samsung-a52q-adreno
+		firmware-samsung-a52q-adsp
+		firmware-samsung-a52q-cdsp
+		firmware-samsung-a52q-ipa
+		firmware-samsung-a52q-modem
+		firmware-samsung-a52q-wlan
+		firmware-samsung-a52q-bluetooth
+		linux-firmware-ath10k
+		msm-modem
+		msm-modem-uim-selection
+		pd-mapper
+		tqftpserv
+		"
+	install="$subpkgname.post-install"
+	mkdir "$subpkgdir"
+}
+
+sha512sums="
+8a2d17df55a4be8e3539a98c2380137ac5a27398a7da9c710e99cb14dd7deecfd193f9c8aec05ace7e5be305d168cbcd373e2a097f73f786765900fdfe2eac60  deviceinfo
+2d05313b813a5434901ec3920d2b0c8040621676cb2c041ca4de2e67913cb3ea642b66363c80f9d1fc7b2bdd7d770f897433c75ad32f392c0917a7cbcde7e850  30-gpu-firmware.files
+"
