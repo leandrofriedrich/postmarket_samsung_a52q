@@ -1,21 +1,23 @@
-# postmarket_samsung_a72q
-PostmarketOS for Samsung Galaxy A72
+# postmarket_samsung_a52q
+postmarketOS for Samsung Galaxy A52
 
 ## Works
 - USB Gadget mode
-- Display (samsung,s6e3fc3-ams667ym01)
-- GPU (FD618)
-- Modem (works only with modemmanager. ofone doesn't seem to work)
-- Wifi
-- Bluetooth
+- Display (simplefb)
 - CPU (tlmm, clock controllers)
 - UFS Storage
 - SDHC (SDCard)
 - IOMMU
 - Battery (sm5714-fg)
-- Touchscreen
 - Some other things from sc7180.dtsi
+## Not tested
+- Display (samsung,s6e3fc3-ams667ym01)
+- GPU (FD618)
 ## Broken
 - Display Brightness
+- Modem
+- Wifi
+- Bluetooth
+- Touchscreen
 ## Bugs
 - Modem sometimes can't start at boot.
