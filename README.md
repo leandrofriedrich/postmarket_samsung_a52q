@@ -12,11 +12,10 @@ postmarketOS for Samsung Galaxy A52
 - IOMMU
 - Battery (sm5714-fg)
 - Touchscreen
+- WiFi
 - Some other things from sc7180.dtsi
-## Not tested
+## Partial/Broken
 - Modem
-## Broken
-- Wifi
 ## Bugs
 - Modem sometimes can't start at boot.
 - Display Brightness freaks out when adjusted, but else works (tested in Plasma Mobile)
